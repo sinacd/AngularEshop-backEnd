@@ -1,6 +1,7 @@
 ﻿using AngularEshop.Core.DTOs.Products;
 using AngularEshop.Core.Services.Interfaces;
 using AngularEshop.Core.Utilities.Common;
+using AngularEshop.WebApi.Identity;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -27,6 +28,7 @@ namespace AngularEshop.WebApi.Controllers
         #region get product for edit
 
         [HttpGet("get-product-for-edit/{id}")]
+        [PermissionChecker("ProductManager")]
         public async Task<IActionResult> GetProductForEdit(long id)
         {
             var product = await productService.GetProductForEdit(id);

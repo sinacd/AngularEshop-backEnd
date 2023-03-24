@@ -29,13 +29,15 @@ namespace AngularEshop.Core.Services.Implementations
             this.userRipository = userRipository;
         }
         #endregion
+
         #region user role
         public async Task<bool> CheckUserRole(long userId, string role)
         {
             return await userRoleRipository.GetEntitiesQuery().AsQueryable().AnyAsync
-                (s=>s.UserId==userId&&s.Role.Name==role);
+                (s=>s.UserId==userId && s.Role.Name==role);
         }
         #endregion
+
         #region dispose
         public void Dispose()
         {

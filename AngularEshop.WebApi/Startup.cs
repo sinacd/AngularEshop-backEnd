@@ -31,11 +31,14 @@ namespace AngularEshop.WebApi
 {
     public class Startup
     {
+
+        #region constructor
         public Startup(IConfiguration configuration, IHostEnvironment hostingEnviroment)
         {
             Configuration = configuration;
             HostingEnviroment = hostingEnviroment;
         }
+        #endregion
 
         public IConfiguration Configuration { get; }
         public IHostEnvironment HostingEnviroment { get; }

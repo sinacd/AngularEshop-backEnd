@@ -41,5 +41,13 @@ namespace AngularEshop.Core.Utilities.Common
         {
             return new JsonResult(new { status = "UnAuthorized", data = returnData });
         }
+        public static JsonResult NoAccess()
+        {
+            return new JsonResult(new { status = "NoAccess" });
+        }
+        public static JsonResult NoAccess(object returnData)
+        {
+            return new JsonResult(new { status = "NoAccess", data = returnData });
+        }
     }
 }
